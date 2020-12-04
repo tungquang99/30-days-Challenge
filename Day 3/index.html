@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsap-landing page</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div class="nav__logo">
+                Lamborghini
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">Models</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Brand</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Store</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Experience</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-home">
+        <div class="home">
+            <h1 class="home__title">LAMBORGHINI</h1>
+
+            <div class="home__img">
+                <img src="./assets/img/lamborghini.png" alt="">
+            </div>
+
+            <div class="home__information">
+                <div class="home__subtitle">LAMBOGHINI <br /> GALLARDO LP560</div>
+                <div class="home__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. At fugit eos
+                    quis sint ullam temporibus.</div>
+            </div>
+
+            <div class="box">
+                <div class="box__medium box--dark">
+                    <i class='bx bx-tachometer icon-box'></i>
+                    <h3 class="box__medium-title d-inline">3.7</h3>
+                    <span class="box__medium-description d-block">Sec.</span>
+                    <span class="box__medium-detail">0-100 km/h</span>
+                </div>
+                <div>
+                    <div class="box__small box--dark">
+                        <i class='bx bx-trending-up icon-box icon-box--small'></i>
+                        <h3 class="box__small-title d-inline">325</h3>
+                        <span class="box__small-description d-block">km/h</span>
+                        <span class="box__small-detail">Top Speed</span>
+                    </div>
+
+                    <div class="box__small box--dark">
+                        <i class='bx bx-car icon-box icon-box icon-box--small'></i>
+                        <h3 class="box__small-title d-inline">8.000</h3>
+                        <span class="box__small-description d-block">r.p.m</span>
+                        <span class="box__small-detail">Power</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+        integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+        crossorigin="anonymous"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
