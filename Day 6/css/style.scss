@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+:root {
+    // Colors
+    --first-color: #3f3d56;
+    --second-color: #363636;
+    --thirst-color: #54b192;
+
+    --header-height: 5rem;
+    // typography
+    --body-font: "Roboto", sans-serif;
+    --questrial-font: "Questrial", sans-serif;
+}
+// base
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+img {
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--body-font);
+    color: var(--second-color);
+}
+
+.bd-grid {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+@media screen and (min-width: 1200px) {
+    .bd-grid {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//Navbar
+.nav {
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 178px;
+    @media screen and (max-width: 768px) {
+        &__list {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: max-content;
+            padding: 2rem 20px;
+            right: -150%;
+            list-style: none;
+            background: white;
+            bottom: 0;
+            transition: 0.5s;
+            z-index: 1;
+            box-shadow: 0 20px 14px #00000045;
+            text-align: center;
+        }
+    }
+    &__item {
+        padding: 1.25rem;
+    }
+
+    &__logo {
+        img {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        font-size: 2rem;
+    }
+
+    &__link {
+        color: var(--second-color);
+        transition: 0.2s;
+        &:hover {
+            color: var(--thirst-color);
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        .nav {
+            &__list {
+                display: flex;
+                align-items: center;
+            }
+            &__toggle {
+                display: none;
+            }
+        }
+    }
+    
+}
+
+.show{
+    right: 0;
+}
+
+//header
+
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    &__intro {
+        &::after {
+            content: "";
+            width: 100vw;
+            height: 50vw;
+            display: block;
+            border-radius: calc(100vw/2);
+            background-color: var(--thirst-color);
+            z-index: -10;
+            position: absolute;
+            transform: rotate(-45deg);
+            top: calc(-5vw + 50px);
+            left: 40vw;
+        }
+
+        @media screen and (min-width: 768px){
+            &::after {
+                width: 100vw;
+                height: 436px;
+                top: -10vw;
+            }
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+    }
+
+    &__title {
+        font-size: 36px;
+        line-height: 48px;
+        margin-bottom: 26px;
+    }
+
+    &__description {
+        width: 300px;
+        font-family: var(--questrial-font);
+        font-size: 1.125rem;
+        margin-bottom: 38px;
+    }
+
+    &__btn {
+        font-family: var(--questrial-font);
+        color: white;
+        background-color: var(--first-color);
+        padding: 10px 28px;
+        border-radius: 21px;
+        font-size: 0.938rem;
+        line-height: 20px;
+        display: block;
+        width: max-content;
+        transition: .3s;
+        margin-bottom: 80px;
+        &:hover {
+            box-shadow: 0 4px 16px var(--first-color);
+        }
+    }
+
+    &__social-link {
+        margin-right: 31px;
+        font-size: 2rem;
+        color: var(--first-color);
+        i {
+            transition: .3s;
+            &:hover {
+                transform: translateY(-8px);
+            }
+        }
+    }
+    &__img {
+        position: absolute;
+        top: 40vw;
+        left: 75%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+
+    @media screen and (min-width: 768px){
+        &__img{
+            top: 220px;
+            left: 75%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+
+
+

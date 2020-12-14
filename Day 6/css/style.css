@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+:root {
+  --first-color: #3f3d56;
+  --second-color: #363636;
+  --thirst-color: #54b192;
+  --header-height: 5rem;
+  --body-font: "Roboto", sans-serif;
+  --questrial-font: "Questrial", sans-serif;
+}
+
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: var(--body-font);
+  color: var(--second-color);
+}
+
+.bd-grid {
+  max-width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .bd-grid {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 178px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__list {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    padding: 2rem 20px;
+    right: -150%;
+    list-style: none;
+    background: white;
+    bottom: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 1;
+    -webkit-box-shadow: 0 20px 14px #00000045;
+            box-shadow: 0 20px 14px #00000045;
+    text-align: center;
+  }
+}
+
+.nav__item {
+  padding: 1.25rem;
+}
+
+.nav__logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.nav__toggle {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.nav__link {
+  color: var(--second-color);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.nav__link:hover {
+  color: var(--thirst-color);
+}
+
+@media screen and (min-width: 768px) {
+  .nav .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .nav .nav__toggle {
+    display: none;
+  }
+}
+
+.show {
+  right: 0;
+}
+
+.header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.header__intro::after {
+  content: "";
+  width: 100vw;
+  height: 50vw;
+  display: block;
+  border-radius: calc(100vw/2);
+  background-color: var(--thirst-color);
+  z-index: -10;
+  position: absolute;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: calc(-5vw + 50px);
+  left: 40vw;
+}
+
+@media screen and (min-width: 768px) {
+  .header__intro::after {
+    width: 100vw;
+    height: 436px;
+    top: -10vw;
+  }
+}
+
+.header__bg {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.header__title {
+  font-size: 36px;
+  line-height: 48px;
+  margin-bottom: 26px;
+}
+
+.header__description {
+  width: 300px;
+  font-family: var(--questrial-font);
+  font-size: 1.125rem;
+  margin-bottom: 38px;
+}
+
+.header__btn {
+  font-family: var(--questrial-font);
+  color: white;
+  background-color: var(--first-color);
+  padding: 10px 28px;
+  border-radius: 21px;
+  font-size: 0.938rem;
+  line-height: 20px;
+  display: block;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-transition: .3s;
+  transition: .3s;
+  margin-bottom: 80px;
+}
+
+.header__btn:hover {
+  -webkit-box-shadow: 0 4px 16px var(--first-color);
+          box-shadow: 0 4px 16px var(--first-color);
+}
+
+.header__social-link {
+  margin-right: 31px;
+  font-size: 2rem;
+  color: var(--first-color);
+}
+
+.header__social-link i {
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.header__social-link i:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+}
+
+.header__img {
+  position: absolute;
+  top: 40vw;
+  left: 75%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: -1;
+}
+
+@media screen and (min-width: 768px) {
+  .header__img {
+    top: 220px;
+    left: 75%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+/*# sourceMappingURL=style.css.map */
