@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Chekout</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card__img">
+                <img src="img/shankar.png" alt="">
+            </div>
+            <div class="card__info">
+                <div class="card__title">
+                    <h2>robo 2.0</h2>
+                </div>
+                <div class="description">
+                    <div class="detail">
+                        <span>R</span><i class='bx bxs-circle'></i><span>1h 48min</span><i
+                            class='bx bxs-circle'></i><span>Action, Science fliction film</span><i
+                            class='bx bxs-circle'></i><span>13 November 2016</span>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <div class="rating__number">
+                            <div class="imdb">8.5 <span class="max-imdb">/10</span></div>
+                            <div class="view">1,123,657</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card__order">
+                    <div class="order__title">
+                        <h3>your order</h3>
+                    </div>
+                    <div class="order__info">
+                        <ul>
+                            <li>Movie</li>
+                            <li>Theater</li>
+                            <li>Date</li>
+                            <li>Room</li>
+                            <li>Ticket Name</li>
+                            <li>Chair Position</li>
+                            <h4>grant total</h4>
+                        </ul>
+                        <ul>
+                            <li>ROBO 2.0</li>
+                            <li>PVR Cinemas</li>
+                            <li>13/11/2016 - 09:00PM</li>
+                            <li>Screen 4</li>
+                            <li>Sweetbox</li>
+                            <li>Y11 - Y12 - Y13</li>
+                            <h4><i class='bx bx-pound'></i>1350</h4>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card__checkout">
+                    <div class="checkout__title">
+                        <h3>checkout</h3>
+                    </div>
+                    <div class="checkout__info">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="">Name on Card</label>
+                                <input type="text" placeholder="Yogesh Madharam">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Card number</label>
+                                <input type="text" placeholder="4693 7512 0600 1311">
+                            </div>
+
+                            <div class="expired-date">
+                                <div class="date">
+                                    <label for="">Expired date</label>
+                                    <div class="time">
+                                        <input type="text" placeholder="11">
+                                        <input type="text" placeholder="2020">
+                                    </div>
+                                </div>
+                                <div class="code">
+                                    <label for="">CVC Code</label>
+                                    <input type="text" placeholder="***">
+                                </div>
+                            </div>
+                            <div class="quikpay">
+                                <input type="checkbox" id="check">
+                                <label for="check">QUIKPAY</label>
+                            </div>
+                            <a href="#">make payment</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
