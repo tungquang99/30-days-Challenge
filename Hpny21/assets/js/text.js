@@ -6,7 +6,7 @@ const textArray = [
   "THỬ THÁCH để giữ bạn luôn kiên nhẫn",
   "MUỘN PHIỀN để giữ bạn thật sự tỉnh táo",
   "HY VỌNG để cho bạn được hạnh phúc",
-  "HẤT BẠI để bạn mãi khiêm nhường",
+  "THẤT BẠI để bạn mãi khiêm nhường",
   "THÀNH CÔNG để giữ bạn mãi nhiệt tâm",
   "BẠN BÈ để bạn được an ủi",
   "VẬT CHẤT để đáp ứng các nhu cầu vật chất của bạn",

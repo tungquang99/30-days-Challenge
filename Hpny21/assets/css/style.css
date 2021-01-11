@@ -12,9 +12,18 @@ body {
   overflow: hidden;
 }
 
+h1,
+h2,
+h3 {
+  margin-top: 0.2rem;
+}
 
-h1,h2,h3 {
-  margin-top: 1rem;
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.3rem;
 }
 
 /*====== COUNT DOWN =========*/
@@ -32,12 +41,12 @@ h1,h2,h3 {
   top: 40%;
   left: 50%;
   width: 100%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -45%);
   text-align: center;
 }
 
 .head__text {
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 h1 {
@@ -48,13 +57,12 @@ h1 {
 }
 
 .count {
-  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 1.5rem;
   max-width: 1024px;
   width: 100%;
-  margin: 3rem auto 0;
+  margin: 1rem auto 0;
 }
 
 .count_d {
@@ -85,7 +93,7 @@ h1 {
   text-align: center;
   font-size: 40px;
   font-weight: 800;
-  padding: 0 10px 25px;
+  padding: 0 10px 30px;
 }
 
 .count_d h2 {
@@ -101,20 +109,49 @@ h1 {
   bottom: 0.7rem;
 }
 
+img {
+  display: none;
+}
+
+/*====== IMAGE ======= */
+img.tet1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+img.tet2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+img.tet3 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+img.tet4 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
 /*====== TEXT TYPING =========*/
 #text {
   color: yellow;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
-  margin: 3.5rem .5rem;
+  margin: 2rem 0.5rem;
 }
 
 .cursor {
   display: inline-block;
   width: 1px;
   background-color: yellow;
-  margin-left: .1rem;
-  animation: blink .8s infinite;
+  margin-left: 0.1rem;
+  animation: blink 0.8s infinite;
 }
 
 .cursor.typing {
@@ -153,7 +190,8 @@ h1 {
   }
 
   .count {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 180px);
+    justify-content: center;
   }
 
   .count_d {
@@ -176,11 +214,33 @@ h1 {
   }
 }
 
+@media screen and (min-width: 930px) {
+  img {
+    display: block;
+    max-width: 150px;
+    width: 100%;
+  }
+}
 
-@media screen and (min-width: 1024px) {
-  h1 {
+@media screen and (min-width: 1200px) {
+  h1,
+  h2,
+  h3 {
+    margin-top: 1rem;
+  }
+
+  h2 {
     font-size: 3rem;
   }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .head__text {
+    margin-top: 5rem;
+  }
+ 
 
   .count {
     grid-template-columns: repeat(4, 1fr);
@@ -204,6 +264,12 @@ h1 {
 
   #text {
     font-size: 2.5rem;
+    margin: 5rem .5rem;
   }
- 
+
+  img {
+    display: block;
+    max-width: 230px;
+    width: 100%;
+  }
 }
