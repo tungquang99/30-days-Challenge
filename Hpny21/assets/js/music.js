@@ -8,8 +8,6 @@ const audioPlayer = document.querySelector(".audio-player");
 const audio = new Audio("/assets/mp3/Nhac-Xuan-Remix.mp3");
 //credit for song: Adrian kreativaweb@gmail.com
 
-console.dir(audio);
-
 audio.addEventListener(
   "loadeddata",
   () => {
@@ -20,6 +18,12 @@ audio.addEventListener(
   },
   false
 );
+
+document.addEventListener("keydown", function(event) {
+  playBtn.classList.remove("play");
+  playBtn.classList.add("pause");
+  audio.play();
+});
 
 //click on timeline to skip around
 const timeline = audioPlayer.querySelector(".timeline");
