@@ -143,7 +143,11 @@ img.tet4 {
   color: yellow;
   font-size: 1.5rem;
   text-align: center;
-  margin: 2rem 0.5rem;
+  margin: 1.5rem 0.5rem;
+}
+
+.text__desc {
+  margin-top: 10px;
 }
 
 .cursor {
@@ -240,7 +244,6 @@ img.tet4 {
   .head__text {
     margin-top: 5rem;
   }
- 
 
   .count {
     grid-template-columns: repeat(4, 1fr);
@@ -264,7 +267,7 @@ img.tet4 {
 
   #text {
     font-size: 2.5rem;
-    margin: 5rem .5rem;
+    margin: 5rem 0.5rem;
   }
 
   img {
