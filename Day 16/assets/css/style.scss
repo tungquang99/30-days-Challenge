@@ -534,7 +534,7 @@ img {
     }
 
     .nav {
-        height: calc(var(--header-height) + 1.5rem) ;
+        height: calc(var(--header-height) + 1.5rem);
 
         &__list {
             display: flex;
@@ -562,6 +562,15 @@ img {
             height: 100%;
             justify-self: center;
             align-items: center;
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__desc {
+            font-size: 1.8rem;
+            padding-bottom: var(--mb-4);
         }
     }
 

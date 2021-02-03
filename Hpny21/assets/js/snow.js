@@ -1,32 +1,19 @@
-/** @license
- * DHTML Snowstorm! JavaScript-based snow for web pages
- * Making it snow on the internets since 2003. You're welcome.
- * -----------------------------------------------------------
- * Version 1.44.20131208 (Previous rev: 1.44.20131125)
- * Copyright (c) 2007, Scott Schiller. All rights reserved.
- * Code provided under the BSD License
- * http://schillmania.com/projects/snowstorm/license.txt
- */
-
-/*jslint nomen: true, plusplus: true, sloppy: true, vars: true, white: true */
-/*global window, document, navigator, clearInterval, setInterval */
-
 var snowStorm = (function (window, document) {
   // --- common properties ---
 
   this.autoStart = true; // Whether the snow should start automatically or not.
   this.excludeMobile = true; // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) Enable at your own risk.
-  this.flakesMax = 5; // Limit total amount of snow made (falling + sticking)
-  this.flakesMaxActive = 5; // Limit amount of snow falling at once (less = lower CPU use)
-  this.animationInterval = 5; // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
+  this.flakesMax = 128; // Limit total amount of snow made (falling + sticking)
+  this.flakesMaxActive = 20; // Limit amount of snow falling at once (less = lower CPU use)
+  this.animationInterval = 10; // Theoretical "miliseconds per frame" measurement. 20 = fast + smooth, but high CPU use. 50 = more conservative, but slower
   this.useGPU = true; // Enable transform-based hardware acceleration, reduce CPU load.
   this.className = null; // CSS class name for further customization on snow elements
   this.excludeMobile = true; // Snow is likely to be bad news for mobile phones' CPUs (and batteries.) By default, be nice.
   this.flakeBottom = null; // Integer for Y axis snow limit, 0 or null for "full-screen" snow effect
-  this.followMouse = false; // Snow movement can respond to the user's mouse
-  this.snowColor = "yellow"; // Don't eat (or use?) yellow snow.
-  this.snowCharacter = "&#10047;"; // &bull; = bullet, &middot; is square on some systems etc.
-  this.snowStick = true; // Whether or not snow should "stick" at the bottom. When off, will never collect.
+  this.followMouse = true; // Snow movement can respond to the user's mouse
+  this.snowColor = "#fff"; // Don't eat (or use?) yellow snow.
+  this.snowCharacter = '<img src="assets/img/hoadao.png" />'; // • = bullet, · is square on some systems etc.
+  this.snowStick = false; // Whether or not snow should "stick" at the bottom. When off, will never collect.
   this.targetElement = null; // element which snow will be appended to (null = document.body) - can be an element ID eg. 'myDiv', or a DOM node reference
   this.useMeltEffect = true; // When recycling fallen snow (or rarely, when falling), have it "melt" and fade out if browser supports it
   this.useTwinkleEffect = false; // Allow snow to randomly "flicker" in and out of view while falling
@@ -38,11 +25,11 @@ var snowStorm = (function (window, document) {
   this.freezeOnBlur = true; // Only snow when the window is in focus (foreground.) Saves CPU.
   this.flakeLeftOffset = 0; // Left margin/gutter space on edge of container (eg. browser window.) Bump up these values if seeing horizontal scrollbars.
   this.flakeRightOffset = 0; // Right margin/gutter space on edge of container
-  this.flakeWidth = 50; // Max pixel width reserved for snow element
-  this.flakeHeight = 50; // Max pixel height reserved for snow element
-  this.vMaxX = 5; // Maximum X velocity range for snow
-  this.vMaxY = 4; // Maximum Y velocity range for snow
-  this.zIndex = 0; // CSS stacking order applied to each snowflake
+  this.flakeWidth = 17; // Max pixel width reserved for snow element
+  this.flakeHeight = 17; // Max pixel height reserved for snow element
+  this.vMaxX = 1; // Maximum X velocity range for snow
+  this.vMaxY = 2; // Maximum Y velocity range for snow
+  this.zIndex = 999; // CSS stacking order applied to each snowflake
 
   // --- "No user-serviceable parts inside" past this point, yadda yadda ---
 
@@ -362,7 +349,7 @@ var snowStorm = (function (window, document) {
     this.y = !isNaN(y) ? y : -rnd(screenY) - 12;
     this.vX = null;
     this.vY = null;
-    this.vAmpTypes = [1, 1.2, 1.4, 1.6, 1.8]; // "amplification" for vX/vY (based on flake size/type)
+    this.vAmpTypes = [1]; // "amplification" for vX/vY (based on flake size/type)
     this.vAmp = this.vAmpTypes[this.type] || 1;
     this.melting = false;
     this.meltFrameCount = storm.meltFrameCount;
@@ -370,7 +357,7 @@ var snowStorm = (function (window, document) {
     this.meltFrame = 0;
     this.twinkleFrame = 0;
     this.active = 1;
-    this.fontSize = 50;
+    this.fontSize = 10 + (this.type / 5) * 10;
     this.o = document.createElement("div");
     this.o.innerHTML = storm.snowCharacter;
     if (storm.className) {
@@ -410,6 +397,7 @@ var snowStorm = (function (window, document) {
         s.o.style.top = storm.flakeBottom + "px";
       } else {
         s.o.style.display = "none";
+        s.o.style.top = "auto";
         s.o.style.bottom = "0%";
         s.o.style.position = "fixed";
         s.o.style.display = "block";
@@ -508,7 +496,11 @@ var snowStorm = (function (window, document) {
           s.setOpacity(s.o, s.meltFrames[s.meltFrame]);
           s.o.style.fontSize =
             s.fontSize - s.fontSize * (s.meltFrame / s.meltFrameCount) + "px";
-          s.o.style.lineHeight = 50 + "px";
+          s.o.style.lineHeight =
+            storm.flakeHeight +
+            2 +
+            storm.flakeHeight * 0.75 * (s.meltFrame / s.meltFrameCount) +
+            "px";
           s.meltFrame++;
         } else {
           s.recycle();
@@ -528,7 +520,7 @@ var snowStorm = (function (window, document) {
       s.o.style.padding = "0px";
       s.o.style.margin = "0px";
       s.o.style.fontSize = s.fontSize + "px";
-      s.o.style.lineHeight = 50 + "px";
+      s.o.style.lineHeight = storm.flakeHeight + 2 + "px";
       s.o.style.textAlign = "center";
       s.o.style.verticalAlign = "baseline";
       s.x = parseInt(rnd(screenX - storm.flakeWidth - 20), 10);

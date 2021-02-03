@@ -1,4 +1,4 @@
-var count = new Date("jan 12, 2021 11:09:00").getTime();
+var count = new Date("feb 12, 2021 00:00:00").getTime();
 
 var x = setInterval(() => {
   var now = new Date().getTime();
@@ -20,9 +20,10 @@ var x = setInterval(() => {
     document.getElementById("hour").innerHTML = "P";
     document.getElementById("minute").innerHTML = "N";
     document.getElementById("second").innerHTML = "Y";
+    //window.location = "phao_hoa/phao_hoa/index.html";
   }
-  if ((seconds < 11) && (days == 0) && hour == 0 && minutes == 0) {
+  if (seconds < 38 && days == 0 && hour == 0 && minutes == 0) {
     clearInterval(x);
-    console.log("HPNY");
+    window.location = "/phao_hoa/phao_hoa/index.html";
   }
 }, 1000);

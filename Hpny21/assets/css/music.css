@@ -1,9 +1,4 @@
 .audio-player {
-  height: 50px;
-  width: 250px;
-  background: rgba(0, 0, 0, 0.05);
-  -webkit-box-shadow: 0 0 20px 0 #000a;
-          box-shadow: 0 0 20px 0 #000a;
   font-family: arial;
   color: white;
   font-size: 0.8rem;

@@ -565,6 +565,13 @@ img {
         -ms-flex-align: center;
             align-items: center;
   }
+  .home__title {
+    font-size: 3rem;
+  }
+  .home__desc {
+    font-size: 1.8rem;
+    padding-bottom: var(--mb-4);
+  }
   .new {
     margin-bottom: 5rem;
   }
