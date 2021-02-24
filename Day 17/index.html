@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NQT Admin</title>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="libs/jquery-3.5.1.slim.min.js"></script>
+</head>
+
+<body class="overlay-scrollbar">
+    <!-- ======= HEADER ====== -->
+    <header class="l-header" id="header">
+        <sidebar class="nav bd-grid">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="javascript:void(0)" class="nav__link" onclick="collapseSidebar()">
+                        <i class='bx bx-menu nav__toggle' id="nav-toggle"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav__list">
+                <li class="nav__item ">
+                    <a href="javascript:void(0)" class="nav__link" onclick="showNotification()">
+                        <i class='bx bxs-bell dropdown-toggle'></i>
+                        <span class="nav__badge">1</span>
+                    </a>
+                    <ul class="dropdown__menu" id="notification-menu">
+                        <div class="dropdown__menu-content overlay-scrollbar scrollbar-hover">
+                            <li class="dropdown__menu-item">
+                                <a href="javascript:void(0)" class="dropdown__menu-link">
+                                    <div>
+                                        <i class='bx bxs-notification'></i>
+                                    </div>
+                                    <span>
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    </span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+                <li class="nav__item">
+                    <a href="javascript:void(0)" class="nav__link" onclick="showInfo()">
+                        <img src="assets/img/user.svg.png" alt="" class="nav__user">
+                    </a>
+                    <ul class="dropdown__menu" id="info-menu">
+                        <div class="dropdown__menu-content overlay-scrollbar scrollbar-hover">
+                            <li class="dropdown__menu-item">
+                                <a href="#" class="dropdown__menu-link">
+                                    <div>
+                                        <i class='bx bx-shield-quarter'></i>
+                                    </div>
+                                    <span>Bảo mật</span>
+                                </a>
+                            </li>
+                            <li class="dropdown__menu-item">
+                                <a href="#" class="dropdown__menu-link">
+                                    <div>
+                                        <i class='bx bxs-dollar-circle'></i>
+                                    </div>
+                                    <span>Chuyển khoản</span>
+                                </a>
+                            </li>
+                            <li class="dropdown__menu-item">
+                                <a href="#" class="dropdown__menu-link">
+                                    <div>
+                                        <i class='bx bxs-cog'></i>
+                                    </div>
+                                    <span>Đổi mật khẩu</span>
+                                </a>
+                            </li>
+                            <li class="dropdown__menu-item">
+                                <a href="#" class="dropdown__menu-link">
+                                    <div>
+                                        <i class='bx bx-log-in'></i>
+                                    </div>
+                                    <span>Đăng xuất</span>
+                                </a>
+                            </li>
+                        </div>
+                    </ul>
+                </li>
+            </ul>
+
+        </sidebar>
+    </header>
+
+    <!-- ======= SIDEBAR ====== -->
+
+    <div class="sidebar">
+        <ul class="sidebar__list">
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link active">
+                    <div class="sidebar__icon">
+                        <i class='bx bxs-tachometer'></i>
+                    </div>
+                    <span>
+                        Dashboard
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bxs-news'></i>
+                    </div>
+                    <span>
+                        Tin tức
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bxs-user-account'></i>
+                    </div>
+                    <span>
+                        Tài khoản
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bx-list-ol'></i>
+                    </div>
+                    <span>
+                        Danh sách lệnh
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bx-list-ul'></i>
+                    </div>
+                    <span>
+                        Danh sách đơn
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bx-history'></i>
+                    </div>
+                    <span>
+                        Lịch sử giao dịch
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bx-line-chart-down'></i>
+                    </div>
+                    <span>
+                        Báo cáo
+                    </span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="#" class="sidebar__link">
+                    <div class="sidebar__icon">
+                        <i class='bx bxs-book-alt'></i>
+                    </div>
+                    <span>
+                        Hướng dẫn
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- ======= MAIN ====== -->
+    <main class="l-main">
+        <!-- ======= LỆNH NẠP THẺ ====== -->
+        <div class="command">
+            <div class="breadcrumb active">
+                <ul class="">
+                    <li class="breadcrumb-item " aria-current="page">Home</li>
+                </ul>
+            </div>
+            <div class="title bd-grid">
+                <span>Lệnh nạp thẻ</span>
+            </div>
+            <div class="command__container bd-grid">
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/Viettel.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/mobi.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/vina.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/banttienViettel.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/chuyen-tien-mobifone.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/bantienVINA.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/kplus-logo.png" alt="">
+                    </a>
+                </div>
+                <div class="command__box">
+                    <a href="javascript:void(0)" onclick="">
+                        <img src="assets/img/ecw1587737961.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ======= TIN TỨC ====== -->
+        <div class="news">
+            <div class="title bd-grid">
+                <span>
+                    Tin tức mới nhất
+                </span>
+            </div>
+            <div class="news__container bd-grid">
+                <div class="news__box">
+                    <div class="news__title">
+                        THÔNG BÁO MỨC CHIẾT KHẤU MỚI DÀNH CHO BẮN TKC
+                    </div>
+                    <div class="news__desc">
+                        <div class="news__user">
+                            Người tạo: admin
+                        </div>
+                        <div class="news__time">
+                            16/11 08:11:38
+                        </div>
+                        <div class="news__content">
+                            VIETTEL 10% VINA 9% - MOBI 8% QUÝ ĐẠI LÝ LƯU Ý: Đối với bắn TKC vina chỉ bắn bội nhỏ...
+                        </div>
+                    </div>
+                    <button class="button news__btn">
+                        Xem <span class="hover-effect"></span>
+                    </button>
+                </div>
+                <div class="news__box">
+                    <div class="news__title">
+                        THÔNG BÁO MỨC CHIẾT KHẤU MỚI DÀNH CHO BẮN TKC
+                    </div>
+                    <div class="news__desc">
+                        <div class="news__user">
+                            Người tạo: admin
+                        </div>
+                        <div class="news__time">
+                            16/11 08:11:38
+                        </div>
+                        <div class="news__content">
+                            VIETTEL 10% VINA 9% - MOBI 8% QUÝ ĐẠI LÝ LƯU Ý: Đối với bắn TKC vina chỉ bắn bội nhỏ...
+                        </div>
+                    </div>
+                    <button class="button news__btn">
+                        Xem <span class="hover-effect"></span>
+                    </button>
+                </div>
+                <div class="news__box">
+                    <div class="news__title">
+                        THÔNG BÁO MỨC CHIẾT KHẤU MỚI DÀNH CHO BẮN TKC
+                    </div>
+                    <div class="news__desc">
+                        <div class="news__user">
+                            Người tạo: admin
+                        </div>
+                        <div class="news__time">
+                            16/11 08:11:38
+                        </div>
+                        <div class="news__content">
+                            VIETTEL 10% VINA 9% - MOBI 8% QUÝ ĐẠI LÝ LƯU Ý: Đối với bắn TKC vina chỉ bắn bội nhỏ...
+                        </div>
+                    </div>
+                    <button class="button news__btn">
+                        Xem <span class="hover-effect"></span>
+                    </button>
+                </div>
+                <div class="news__box">
+                    <div class="news__title">
+                        THÔNG BÁO MỨC CHIẾT KHẤU MỚI DÀNH CHO BẮN TKC
+                    </div>
+                    <div class="news__desc">
+                        <div class="news__user">
+                            Người tạo: admin
+                        </div>
+                        <div class="news__time">
+                            16/11 08:11:38
+                        </div>
+                        <div class="news__content">
+                            VIETTEL 10% VINA 9% - MOBI 8% QUÝ ĐẠI LÝ LƯU Ý: Đối với bắn TKC vina chỉ bắn bội nhỏ...
+                        </div>
+                    </div>
+                    <button class="button news__btn">
+                        Xem <span class="hover-effect"></span>
+                    </button>
+                </div>
+                <div class="news__box">
+                    <div class="news__title">
+                        THÔNG BÁO MỨC CHIẾT KHẤU MỚI DÀNH CHO BẮN TKC
+                    </div>
+                    <div class="news__desc">
+                        <div class="news__user">
+                            Người tạo: admin
+                        </div>
+                        <div class="news__time">
+                            16/11 08:11:38
+                        </div>
+                        <div class="news__content">
+                            VIETTEL 10% VINA 9% - MOBI 8% QUÝ ĐẠI LÝ LƯU Ý: Đối với bắn TKC vina chỉ bắn bội nhỏ...
+                        </div>
+                    </div>
+                    <button class="button news__btn">
+                        Xem <span class="hover-effect"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

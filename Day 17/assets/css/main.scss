@@ -1,0 +1,417 @@
+$primary-color: #4834d4;
+$success-color: #6ab04c;
+$warning-color: #f0932b;
+$danger-color: #eb4d4b;
+$white-color: #ffffff;
+$gray-color: #aaaaaa;
+
+$light-color: #212529;
+$light-second-color: #727475;
+$light-background: #ffffff;
+$light-second-background: #f1f1f1;
+$light-body: rgba(0, 0, 0, 0.2);
+
+$biggest-font-size: 3rem;
+$big-font-size: 1.8rem;
+$normal-font-size: 1.25rem;
+
+:root {
+    --header-height: 3rem;
+    --z-toltip: 9;
+    --z-fixed: 10;
+    --z-modal: 99;
+}
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: var(--header-height) 0 0 0;
+    font-family: "Roboto", sans-serif;
+    background: $light-background;
+    font-size: $normal-font-size;
+    color: $light-color;
+    line-height: 1.6;
+}
+
+.overlay-scrollbar {
+    &::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 10rem;
+        border: 1px solid var(--main-bg-color);
+    }
+
+    &::-webkit-scrollbar-track-piece:start {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-track-piece:end {
+        background: transparent;
+    }
+}
+
+.scrollbar-hover::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hover:hover::-webkit-scrollbar {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: $light-second-color;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.d-none {
+    display: none !important;
+}
+
+// TIÊU ĐỀ
+
+.title {
+    background-color: $white-color;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 4px 10px;
+    margin: 0.5rem auto 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+// BUTTON
+
+.button {
+    display: inline-block;
+    text-decoration: none !important;
+    -webkit-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+    cursor: pointer;
+    font-size: 0.8rem;
+    line-height: 26px;
+    transition: 0.3s;
+    font-weight: 700;
+    background-color: #4a44f2;
+    color: #fff;
+    border-radius: 5px;
+    white-space: nowrap;
+    padding: 5px 20px;
+    border: none;
+    outline: none;
+
+    &:hover .hover-effect {
+        width: calc(100% * 2.25);
+        padding-top: calc(100% * 2.25);
+        opacity: 1;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.button {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hover-effect {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease-in-out;
+    background-color: #393e46;
+    z-index: -1;
+    border-radius: 100%;
+    opacity: 0.5;
+}
+
+// BREADCRUMB
+.breadcrumb {
+    margin-left: 8px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: $gray-color;
+
+    &.active {
+        color: $primary-color;
+    }
+}
+
+// LAYOUT
+
+.l-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    background-color: $white-color;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.l-main {
+    margin-left: 0px;
+    background-color: $light-second-background;
+    height: 100%;
+    transition: margin-left 0.3s;
+    padding-top: 20px;
+}
+
+.bd-grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    //max-width: 1400px;
+    width: calc(100% - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+// NAV
+.nav {
+    display: flex;
+    justify-content: space-between;
+    height: var(--header-height);
+    align-items: center;
+    padding: 2rem 0;
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        font-size: $big-font-size;
+    }
+
+    &__logo {
+        height: 30px;
+        margin-left: 0.6rem;
+    }
+
+    &__user {
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+        margin-left: 0.6rem;
+    }
+
+    &__badge {
+        font-size: 0.6rem;
+        padding: 2px 4px;
+        font-weight: 300;
+        position: absolute;
+        right: 60px;
+        top: 9px;
+        color: #fff;
+        background: $danger-color;
+        border-radius: 5px;
+    }
+}
+
+// SIDEBAR
+
+.sidebar {
+    width: 0px;
+    height: 100%;
+    position: fixed;
+    margin-top: 15px;
+    padding-top: 1px;
+    background-color: $light-background;
+    overflow: scroll;
+    z-index: 9;
+    transition: all 0.3s;
+    box-shadow: 0 1px 4px 1px rgba(0, 0, 0, 0.2);
+
+    &::-webkit-scrollbar {
+        width: 0px;
+        background-color: $light-background;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $light-background;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background: var(--danger-color);
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+    }
+
+    &__item {
+        width: 100%;
+        margin: 0;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: $light-second-color;
+        text-decoration: none;
+        min-width: 0px;
+        height: 50px;
+
+        i {
+            font-size: $big-font-size;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        div {
+            border-left: 5px solid transparent;
+        }
+
+        &:hover {
+            background-color: $light-second-background;
+
+            div {
+                border-left: 5px solid $primary-color;
+            }
+        }
+
+        span {
+            font-size: 1.1rem;
+        }
+
+        &.active {
+            color: $primary-color;
+            background-color: $light-second-background;
+
+            div {
+                border-left: 5px solid $primary-color;
+            }
+        }
+    }
+
+    &__icon {
+        min-width: 82px;
+        height: 50px;
+        position: relative;
+    }
+}
+.sidebar.expand {
+    width: 250px;
+}
+// .sidebar-expand {
+   
+// }
+
+// THÔNG BÁO
+#notification-menu {
+    min-width: 380px;
+    position: absolute;
+    right: 3%;
+    top: 77%;
+}
+
+#info-menu {
+    min-width: 150px;
+    position: absolute;
+    right: 1%;
+    top: 77%;
+    width: 220px;
+}
+
+.dropdown__menu {
+    list-style: none;
+    flex-direction: column;
+    background: $light-background;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: var(--z-toltip);
+    padding: unset;
+    border-radius: 10px;
+    border: 0.125px solid $light-second-background;
+    transition: all 0.3s;
+    visibility: hidden;
+    opacity: 0;
+
+    &-content {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    &-item {
+        width: 100%;
+    }
+
+    &-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        color: var(--main-color);
+        padding: 5px;
+        &:hover {
+            background-color: $light-second-background;
+            border-radius: 10px;
+        }
+    }
+
+    &-link div {
+        min-width: 50px;
+        height: 50px;
+        position: relative;
+    }
+
+    &-link i {
+        font-size: $big-font-size;
+        color: $light-second-color;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &-link span {
+        font-size: 15px;
+        width: 298px;
+    }
+
+    &-link span > span {
+        font-size: 10px;
+    }
+}
+
+.show__noti {
+    visibility: visible;
+    opacity: 1;
+}
+
+.show__info {
+    visibility: visible;
+    opacity: 1;
+}
