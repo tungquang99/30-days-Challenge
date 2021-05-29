@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="assets/style/style.css" />
+
+    <!-- BOX-ICON -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <title>Casino</title>
+  </head>
+  <body>
+    <!--=========== HEADER ==================-->
+    <header class="l-header" id="header">
+      <div class="nav bd-grid" id="nav">
+        <div class="nav__left">
+          <div class="nav__bar" id="nav-toggle">
+            <i class="bx bx-menu"></i>
+          </div>
+          <div class="nav__logo">
+            <img
+              src="assets/img/logo-icon.png"
+              alt=""
+              class="nav__logo--icon"
+            />
+            <img src="assets/img/logo.png" alt="" class="nav__logo--tablet" />
+          </div>
+        </div>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="" class="nav__link"
+                ><img src="assets/img/nav1.png" alt="" class="nav__img" />
+                Online Casinos <i class="bx bx-chevron-down"></i
+              ></a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="nav__link"
+                ><img src="assets/img/nav2.png" alt="" class="nav__img" />
+                Bonuses <i class="bx bx-chevron-down"></i
+              ></a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="nav__link"
+                ><img src="assets/img/nav3.png" alt="" class="nav__img" /> Games
+                <i class="bx bx-chevron-down"></i
+              ></a>
+            </li>
+            <li class="nav__item">
+              <a href="" class="nav__link"
+                ><img src="assets/img/nav4.png" alt="" class="nav__img" /> Blog
+                <i class="bx bx-chevron-down"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav__right">
+          <div class="nav__language">
+            <img
+              src="assets/img/langauge.png"
+              alt=""
+              class="nav__language--logo"
+            />
+            <div class="nav__language--text">
+              EN <i class="bx bx-caret-down"></i>
+            </div>
+          </div>
+          <div class="nav__search">
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!--=========== MAIN ==================-->
+    <main class="l-main" id="main">
+      <!-- ==== BREADCRUMD ==== -->
+      <div class="breadcrumb bd-grid" id="breadcrumb">
+        <div class="breadcrumb__list">
+          <span class="breadcrumb__item">PlayUnited.com</span>
+          <i class="bx bxs-chevron-right"></i>
+          <span class="breadcrumb__item">Casinos </span>
+        </div>
+      </div>
+
+      <!-- ==== TITLE ==== -->
+      <div class="section bd-grid">
+        <div class="section-title">
+          Recommended for you: <span class="section-color">1900 casinos</span>
+        </div>
+      </div>
+
+      <!-- -==== TABS  ==== -->
+      <div class="tab">
+        <div
+          class="tab__item active"
+          onclick="changeTabs(this)"
+          toggle="recommend"
+        >
+          Recommended (342)
+        </div>
+        <div class="tab__item" onclick="changeTabs(this)" toggle="big">
+          Big Brands (132)
+        </div>
+        <div class="tab__item" onclick="changeTabs(this)" toggle="opnened">
+          Newly Opnened (193)
+        </div>
+        <div class="tab__item" onclick="changeTabs(this)" toggle="all">
+          All (1982)
+        </div>
+        <div class="tab__line"></div>
+      </div>
+
+      <!-- Tab content -->
+      <div class="tab__content bd-grid">
+        <div class="tab__pane active" id="recommend">
+          <p>
+            React makes it painless to create interactive UIs. Design simple
+            views for each state in your application, and React will efficiently
+            update and render just the right components when your data changes.
+            We've thoroughly reviewed Wazamba Casino and gave it a good
+            reputation rating. It's generally a good casino to play at, but
+            there are some things worth noting. In our review, we've considered
+            th.
+          </p>
+        </div>
+        <div class="tab__pane" id="big">
+          <p>
+            Angular is an application design framework and development platform
+            for creating efficient and sophisticated single-page apps. Ember.js
+            is a productive, battle-tested JavaScript framework for building
+            modern web applications. It includes everything you need to build
+            rich UIs that work on any device.
+          </p>
+        </div>
+        <div class="tab__pane" id="opnened">
+          <p>
+            Ember.js is a productive, battle-tested JavaScript framework for
+            building modern web applications. It includes everything you need to
+            build rich UIs that work on any device.
+          </p>
+        </div>
+        <div class="tab__pane" id="all">
+          <p>
+            Vue (pronounced /vjuː/, like view) is a progressive framework for
+            building user interfaces. Unlike other monolithic frameworks, Vue is
+            designed from the ground up to be incrementally adoptable.
+          </p>
+        </div>
+      </div>
+
+      <!-- SHOW MORE -->
+      <div class="show__more">
+        <div class="show__more--blur"></div>
+        <div class="show__more--btn" onclick="showMore()">
+          Show more <i class="bx bxs-chevron-down"></i>
+        </div>
+      </div>
+
+      <!-- ========== SHOWING CASINOS  ============= -->
+      <div class="showing bd-grid">
+        Showing casinos: Accepting players from Greece with Reputation rating
+        above 7.5
+      </div>
+
+        <!-- ========== BOX CASINOS  ============= -->
+        <div class="box bd-grid">
+            <div class="box__header">
+                <div class="box__img"><img src="assets/img/box1.png" alt=""></div>
+                <div class="box__title section-title"> <span>#1</span> - Dunder australia online casino</div>
+                <div class="box__flag"><i class='bx bxs-star'></i></div>
+            </div>
+            <div class="box__main">
+                <div class="box__main--rate">
+                    <div class="box__rate--number">
+                        <img src="assets/img/icon7.png" alt=""> <span>9.33/10</span>
+                    </div>
+                    <div class="box__rate--status">
+                        <span>PERFECT</span> Reputation <i class='bx bxs-info-circle'></i>
+                    </div>
+                </div>
+                <div class="box__main--desc">
+                    <div class="box__desc--check">
+                        <div class="box__check">
+                            <img src="assets/img/icon5.png" alt="" class="box__check--icon">
+                            <img src="assets/img/langauge1.png" alt=""  class="box__check--icon">
+                            <div class="box__check--text">Players from Greece</div>
+                        </div>
+                        <div class="box__check">
+                            <img src="assets/img/icon5.png" alt="" class="box__check--icon">
+                            <img src="assets/img/langauge.png" alt=""  class="box__check--icon">
+                            <div class="box__check--text">English website</div>
+                        </div>
+                        <div class="box__check">
+                            <img src="assets/img/icon5.png" alt="" class="box__check--icon">
+                            <img src="assets/img/langauge.png" alt=""  class="box__check--icon">
+                            <div class="box__check--text">English customer support</div>
+                        </div>
+                        <div class="box__check">
+                            <img src="assets/img/icon6.png" alt="" class="box__check--icon">
+                            <img src="assets/img/icon.png" alt=""  class="box__check--icon">
+                            <div class="box__check--text">Live chat</div>
+                        </div>
+                    </div>
+                    <div class="box__desc--gift">
+                        <div class="box__gift--type">Exclusive</div>
+                        <div class="box__gift--apply">T&C's Apply</div>
+                        <div class="box__gift--title">121% up to $500 and 200 extra spins on slot games</div>
+                    </div>
+                </div>
+            </div>
+            <div class="box__footer">
+                <div class="btn btn-active ">Visit</div>
+                <div class="btn">Review</div>
+                <div class="btn">More <i class="bx bxs-chevron-down"></i></div>
+            </div>                   
+        </div>
+
+        <!-- ========== SHOW MORE AND PAGINATION  ============= -->
+        <div class="showmore bd-grid">
+          <div class="showmore__btn">
+            show 18 more 
+          </div>
+          <div class="showmore__total">Showing results 1 - 18 of 4926</div>
+        </div>
+
+        <div class="pagination bd-grid">
+          <div class="pagination__btn pagination__prev"><i class="bx bx-chevron-left"></i>Previous</div>
+          <div class="pagination__btn pagination__next">Next <i class="bx bx-chevron-right"></i></div>
+        </div>
+
+         <!-- ========== FILTER & SORT  ============= -->
+         <div class="filter">
+            <div class="filter__btn">
+              <img src="assets/img/icon3.png" alt="">
+              <div class="filter__btn--text">Filter (2)</div>
+            </div>
+
+            <div class="filter__btn filter-sort">
+              <img src="assets/img/icon4.png" alt="">
+              <div class="filter__btn--text">Sort</div>
+            </div>
+         </div>
+    </main>
+    <!-- JAVASCRIPTS -->
+    <script src="assets/js/style.js"></script>
+  </body>
+</html>
